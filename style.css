@@ -23,6 +23,9 @@ textarea{
 table{
     border-collapse: collapse;
     border: 1px solid black;
+    width: 400px;
+    height: 400px;
+    display: none;
 }
 
 td{
@@ -55,11 +58,18 @@ span.index{
     font-size: 10px;
 }
 
+.container{
+    resize: horizontal;
+    overflow: auto;
+
+    width: 400px;
+    height: auto;
+}
+
 canvas{
     border: 1px solid black;
 
-    width: 400px;
-    height: 400px;
+    width: inherit;
 
     image-rendering: pixelated;
 }
