@@ -1,6 +1,7 @@
 const firePixelsArray = []
+const examplePaletteStr = "#ffff00, #fff700, #ffee00, #ffe600, #ffdd00, #ffd500, #ffcc00, #ffc400, #ffbb00, #ffb300, #ffaa00, #ffa200, #ff9900, #ff9100, #ff8800, #ff8000, #ff7700, #ff6f00, #ff6600, #ff5e00, #ff5500, #ff4d00, #ff4400, #ff3c00, #ff3300, #ff2a00, #ff2200, #ff1900, #ff1100, #ff0800, #ff0000, #bd0404, #910101, #610000, #520000, #000000"
+const originaColorPalette = ["#070707", "#1f0707", "#2f0f07", "#470f07", "#571707", "#671f07", "#771f07", "#8f2707", "#9f2f07", "#af3f07", "#bf4707", "#c74707", "#df4f07", "#df5707", "#df5707", "#d75f07", "#d75f07", "#d7670f", "#cf6f0f", "#cf770f", "#cf7f0f", "#cf8717", "#c78717", "#c78f17", "#c7971f", "#bf9f1f", "#bf9f1f", "#bfa727", "#bfa727", "#bfaf2f", "#b7af2f", "#b7b72f", "#b7b737", "#cfcf6f", "#dfdf9f", "#efefc7", "#ffffff"]
 var fireColorsPalette = ["#070707", "#1f0707", "#2f0f07", "#470f07", "#571707", "#671f07", "#771f07", "#8f2707", "#9f2f07", "#af3f07", "#bf4707", "#c74707", "#df4f07", "#df5707", "#df5707", "#d75f07", "#d75f07", "#d7670f", "#cf6f0f", "#cf770f", "#cf7f0f", "#cf8717", "#c78717", "#c78f17", "#c7971f", "#bf9f1f", "#bf9f1f", "#bfa727", "#bfa727", "#bfaf2f", "#b7af2f", "#b7b72f", "#b7b737", "#cfcf6f", "#dfdf9f", "#efefc7", "#ffffff"]
-var examplePaletteStr = "#ffff00, #fff700, #ffee00, #ffe600, #ffdd00, #ffd500, #ffcc00, #ffc400, #ffbb00, #ffb300, #ffaa00, #ffa200, #ff9900, #ff9100, #ff8800, #ff8000, #ff7700, #ff6f00, #ff6600, #ff5e00, #ff5500, #ff4d00, #ff4400, #ff3c00, #ff3300, #ff2a00, #ff2200, #ff1900, #ff1100, #ff0800, #ff0000, #bd0404, #910101, #610000, #520000, #000000"
 var interval
 var stopInterval
 var running = true
@@ -92,7 +93,11 @@ function setPalette(){
         })
         fireColorsPalette = palette.reverse()
     }else{
-        alert("The palette MUST contain 36 colors!")
+        if(paletteStr == ""){
+            fireColorsPalette = originaColorPalette
+        }else{
+            alert("The palette MUST contain 36 colors!")
+        }
     }
 }
 
