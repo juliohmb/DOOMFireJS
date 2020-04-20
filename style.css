@@ -73,3 +73,9 @@ canvas{
 
     image-rendering: pixelated;
 }
+
+div.controller{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

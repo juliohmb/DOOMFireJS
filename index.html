@@ -13,12 +13,17 @@
     <div class="container">
         <canvas width="40" height="40"></canvas>
     </div>
-    <button onclick="start()">Start</button>
-    <button onclick="stop()">Stop</button>
-    <button onclick="play()">Continue</button>
-    <button onclick="pause()">Pause</button>
+
+    <div class="controller">
+        <button onclick="start()">Start</button>
+        <button onclick="stop()">Stop</button>
+    </div>
+    <div class="controller">
+        <button onclick="play()">Continue</button>
+        <button onclick="pause()">Pause</button>
+        <button onmousewheel="calculateFirePropagation()" onclick="calculateFirePropagation()">Frame foward</button>
+    </div>
     <button onclick="toggleWind()">Toggle wind</button>
-    <button onmousewheel="calculateFirePropagation()" onclick="calculateFirePropagation()">Frame foward</button>
     <script src="index.js"></script>
 </body>
 </html>
