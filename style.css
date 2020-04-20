@@ -79,3 +79,8 @@ div.controller{
     justify-content: center;
     align-items: center;
 }
+
+textarea{
+    width: 400px;
+    resize: none;
+}

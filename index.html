@@ -23,14 +23,17 @@
         <button onclick="pause()">Pause</button>
         <button onmousewheel="calculateFirePropagation()" onclick="calculateFirePropagation()">Frame foward</button>
     </div>
+    <div class="controller">
+        <button onclick="setSource(0)">Min intensity</button>
+        <input type="range" min="0" max="36">
+        <button onclick="setSource(36)">Max intensity</button>
+    </div>
     <button onclick="toggleWind()">Toggle wind</button>
+    <textarea placeholder='Copy your color palette here ex.: #ffffff, #000000. Must have 36 colors separated by commas.'></textarea>
+    <div class="controll">
+        <button onclick="setPalette()">Set Palette</button>
+        <button onclick="examplePalette()">Example Palette</button>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
-
-
-<!-- 
-    intensity
-    size of canvas
-    change color pallete    
- -->
