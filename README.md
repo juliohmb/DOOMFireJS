@@ -15,3 +15,8 @@
  ```
  #ffff00, #fff700, #ffee00, #ffe600, #ffdd00, #ffd500, #ffcc00, #ffc400, #ffbb00, #ffb300, #ffaa00, #ffa200, #ff9900, #ff9100, #ff8800, #ff8000, #ff7700, #ff6f00, #ff6600, #ff5e00, #ff5500, #ff4d00, #ff4400, #ff3c00, #ff3300, #ff2a00, #ff2200, #ff1900, #ff1100, #ff0800, #ff0000, #bd0404, #910101, #610000, #520000, #000000
  ```
+
+ * ColdColorPalette :
+ ```
+ #00ffff, #00f7ff, #00eeff, #00e5ff, #00ddff, #00d5ff, #00ccff, #00c3ff, #00bbff, #00b3ff, #00aaff, #00a2ff, #0099ff, #0091ff, #0088ff, #0080ff, #0077ff, #006eff, #0066ff, #005eff, #0055ff, #004cff, #0044ff, #003cff, #0033ff, #002aff, #0022ff, #001aff, #0011ff, #0008ff, #0000ff, #0000c4, #0000a3, #00008c, #000059, #000000
+ ```

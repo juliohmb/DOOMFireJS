@@ -7,32 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="canvasDiv">
-        
-    </div>
+    <div id="canvasDiv"></div>
     <div class="container">
         <canvas width="40" height="40"></canvas>
     </div>
-
     <div class="controller">
-        <button onclick="start()">Start</button>
-        <button onclick="stop()">Stop</button>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
     </div>
     <div class="controller">
-        <button onclick="play()">Continue</button>
-        <button onclick="pause()">Pause</button>
-        <button onmousewheel="calculateFirePropagation()" onclick="calculateFirePropagation()">Frame foward</button>
+        <button id="continue">Continue</button>
+        <button id="pause">Pause</button>
+        <button id="frameFoward">Frame foward</button>
     </div>
     <div class="controller">
-        <button onclick="setSource(0)">Min intensity</button>
+        <button id="minIntensity">Min intensity</button>
         <input type="range" min="0" max="36">
-        <button onclick="setSource(36)">Max intensity</button>
+        <button id="maxIntensity">Max intensity</button>
     </div>
-    <button onclick="toggleWind()">Toggle wind</button>
-    <textarea placeholder='Copy your color palette here ex.: #ffffff, #000000. Must have 36 colors separated by commas.'></textarea>
+    <button id="toggleWind">Toggle wind</button>
+    <textarea placeholder='Copy your color palette here ex.: #ffffff, #000000. Must have 36 colors separated by commas. (empty for default)'></textarea>
     <div class="controll">
-        <button onclick="setPalette()">Set Palette</button>
-        <button onclick="examplePalette()">Example Palette</button>
+        <button id="setPalette">Set Palette</button>
+        <button id="examplePalette">Example Palette</button>
     </div>
     <script src="index.js"></script>
 </body>
