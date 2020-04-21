@@ -1,7 +1,7 @@
 const firePixelsArray = []
 const examplePaletteStr = "#00ffff, #00f7ff, #00eeff, #00e5ff, #00ddff, #00d5ff, #00ccff, #00c3ff, #00bbff, #00b3ff, #00aaff, #00a2ff, #0099ff, #0091ff, #0088ff, #0080ff, #0077ff, #006eff, #0066ff, #005eff, #0055ff, #004cff, #0044ff, #003cff, #0033ff, #002aff, #0022ff, #001aff, #0011ff, #0008ff, #0000ff, #0000c4, #0000a3, #00008c, #000059, #000000"
 const originaColorPalette = ["#070707", "#1f0707", "#2f0f07", "#470f07", "#571707", "#671f07", "#771f07", "#8f2707", "#9f2f07", "#af3f07", "#bf4707", "#c74707", "#df4f07", "#df5707", "#df5707", "#d75f07", "#d75f07", "#d7670f", "#cf6f0f", "#cf770f", "#cf7f0f", "#cf8717", "#c78717", "#c78f17", "#c7971f", "#bf9f1f", "#bf9f1f", "#bfa727", "#bfa727", "#bfaf2f", "#b7af2f", "#b7b72f", "#b7b737", "#cfcf6f", "#dfdf9f", "#efefc7", "#ffffff"]
-var fireColorsPalette = ["#070707", "#1f0707", "#2f0f07", "#470f07", "#571707", "#671f07", "#771f07", "#8f2707", "#9f2f07", "#af3f07", "#bf4707", "#c74707", "#df4f07", "#df5707", "#df5707", "#d75f07", "#d75f07", "#d7670f", "#cf6f0f", "#cf770f", "#cf7f0f", "#cf8717", "#c78717", "#c78f17", "#c7971f", "#bf9f1f", "#bf9f1f", "#bfa727", "#bfa727", "#bfaf2f", "#b7af2f", "#b7b72f", "#b7b737", "#cfcf6f", "#dfdf9f", "#efefc7", "#ffffff"]
+var fireColorsPalette = originaColorPalette
 var interval
 var stopInterval
 var running = true
@@ -9,9 +9,9 @@ var running = true
 // configuration
 const fireWidth = 45
 const fireHeight = 45
-var debug = false
-var wind = true
 const fireDecay = 3
+const debug = false
+var wind = true
 // ---
 
 // evt listeners
@@ -32,10 +32,6 @@ function start(){
     createFireDataStructure()
     setSource()
     render()
-    clearInterval(stopInterval)
-    stopInterval = null
-    clearInterval(interval)
-    interval = null
     if(interval == null){
         interval = setInterval(calculateFirePropagation, 50)
     }
@@ -43,18 +39,12 @@ function start(){
 }
 
 function stop(){
-    const init = fireHeight * fireWidth - fireWidth
     stopInterval = setInterval(() => {
-        let zero = 0
-        for (let i = init; i < firePixelsArray.length; i++){
-            if(firePixelsArray[i] >= 0){
-                firePixelsArray[i] = firePixelsArray[i] - 1
-            }
-            if(firePixelsArray[i] == 0){
-                zero++
-            }
+        const bottonPixel = firePixelsArray[fireWidth * fireHeight - 1]
+        if (bottonPixel > 0){
+            setSource(bottonPixel - 1)
         }
-        if(zero == fireWidth){
+        else if(bottonPixel == 0){
             clearInterval(stopInterval)
             stopInterval = null
         }
@@ -92,7 +82,6 @@ function setSource(intensity = 36){
 
 function createFireDataStructure(){
     const numberOfPixels = fireWidth * fireHeight
-
     for (let i = 0; i < numberOfPixels; i++){
         firePixelsArray[i] = 0
     }
